@@ -46,7 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(data);
         const {name, main, weather} = data;
         cityNameDisplay.textContent = name;
-
+        tempratureDisplay.textContent = `Tempreture: ${main.temp}`;
+        descriptionDisplay.textContent = `Description: ${weather[0].description}`;
+        
         // unlock the display
         weatherInfo.classList.remove("hidden");
         errorMessage.classList.add("hidden");
@@ -54,6 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showError(){
         weatherInfo.classList.add("hidden");
-        errorMessage.classList.remove("hidden");
+        errorMessage.classList.remove("hidden"); 
     }
 });
